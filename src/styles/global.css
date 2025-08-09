@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --gradient-primary: linear-gradient(45deg, #2196F3 30%, #21CBF3 90%);
+  --gradient-hover: linear-gradient(45deg, #1976D2 30%, #00B8D4 90%);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F7FA;
+}
+
+/* Transition effects */
+.MuiPaper-root,
+.MuiButton-root,
+.MuiTextField-root,
+.MuiSelect-root {
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Hover effects */
+.MuiPaper-root:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
+}
+
+.MuiButton-contained:not(:disabled) {
+  background: var(--gradient-primary) !important;
+}
+
+.MuiButton-contained:hover:not(:disabled) {
+  background: var(--gradient-hover) !important;
+}
+
+/* Input fields */
+.MuiOutlinedInput-root {
+  background-color: white;
+}
+
+.MuiOutlinedInput-root:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.MuiOutlinedInput-root.Mui-focused {
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+/* Dialog animations */
+.MuiDialog-paper {
+  animation: dialogSlideIn 0.3s ease-out;
+}
+
+@keyframes dialogSlideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Form field animations */
+.form-field-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.form-field-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.form-field-exit {
+  opacity: 1;
+}
+
+.form-field-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
